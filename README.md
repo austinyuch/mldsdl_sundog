@@ -8,9 +8,35 @@ https://www.udemy.com/course/data-science-and-machine-learning-with-python-hands
 ### Python versioning
 Python 3.6–3.9
 
-1.Install pyenv
-
+1.
 2.Install and then switch to version 3.9 (or later version if exists.)
+
+Install pyenv (WSL2)
+ref: https://github.com/pyenv/pyenv/wiki#suggested-build-environment  
+```
+sudo apt update; sudo apt install build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev curl \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
+curl https://pyenv.run | bash
+exec $SHELL
+```
+
+in ~/.bashrc, add: 
+```
+export PATH="$HOME/.pyenv/bin:$PATH"
+
+if command -v pyenv 1>/dev/null 2>&1; then
+ eval "$(pyenv init -)"
+fi
+```
+
+
+check shims in path
+```
+echo $PATH | grep --color=auto "$(pyenv root)/shims"
+```
+
 
 install pyenv 
 for windows
@@ -26,8 +52,13 @@ pyenv shell 3.9.13
 ```
 
 Env variable may be different, do check it. e.g. 
+for windows
 ```
 get-command python
+```
+linux/WSL2
+```
+which python
 ```
 or
 ```
@@ -36,7 +67,7 @@ python --version
 create env
 ```
 python -m pip install -U pip
-python -m venv venv
+python -m venv .venv
 
 ```
 
@@ -45,7 +76,7 @@ activate venv in windows
 # switch to the python version
 pyenv local 3.9.13
 # upgrade pip
-python -m pip install -U pip
+pip install -U pip
 ```
 specify python path in vscode settings.json
 ```
@@ -55,33 +86,45 @@ specify python path in vscode settings.json
 }
 ```
 
+
 create ".venv" venv
 ```
 python -m venv .venv
+```
+for linux:
+```
+python3 -m venv .venv
 ```
 
 activate .venv
 ```
 .venv/Scripts/activate
 ```
+for linux
+```
+source ./.venv/bin/activate
+```
 
 ```
 pip install -U pip
 ```
 
-Install poetry in Windows:
-```
-(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
+do not use poetry, because jupyterlab dependency need cython; 
+whiole Cython is a build dependency of pysam, but apparently pysam does not have a pyproject.toml 
+ref:  
+https://stackoverflow.com/questions/75372835/poetry-add-dependency-that-uses-cython  
 
-```
-or
-```
-pip install poetry
-```
-```
-poetry init
-```
 
+
+(scipy Prerequisite)
+sudo apt-get install build-essential gfortran libatlas-base-dev python-pip 
+(ubuntu 22.04 has no python-dev)
+
+pip install pandas
+pip install jupyterlab
+pip install scipy
+pip install matplotlib
+pip installl scilit-learn
 
 ### Tensorflow Docker
 pull tensorflow docker
@@ -100,6 +143,22 @@ sudo apt-key del 7fa2af80
 ```
 Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
 OK
+```
+
+## NVIDIA container toolkit
+https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker
+
+```
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
+      && curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
+      && curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | \
+            sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+            sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+```
+
+```
+sudo apt-get update \
+    && sudo apt-get install -y nvidia-container-toolkit-base
 ```
 
 Download Installer for Linux WSL-Ubuntu 2.0 x86_64
