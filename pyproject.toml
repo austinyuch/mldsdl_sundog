@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "mldsdl-sundog"
+version = "0.1.0"
+description = ""
+authors = ["Yueh-Cheng Chang <ycchang.pmp@gmail.com>"]
+readme = "README.md"
+packages = [{include = "mldsdl_sundog"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+tensorflow = "^2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
