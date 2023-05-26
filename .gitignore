@@ -4,3 +4,4 @@ venv/**
 install-pyenv-win.ps1
 MLCourse.zip
 MLCourse/**/*
+*.ipynb_checkpoints

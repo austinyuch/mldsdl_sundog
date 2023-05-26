@@ -2,14 +2,16 @@
 Machine learning, data science, Deep learning course practice, Udemy ccourse, by Frank Kane
 
 https://www.udemy.com/course/data-science-and-machine-learning-with-python-hands-on/
+enable long path  
+https://thegeekpage.com/make-windows-11-accept-file-paths-over-260-characters/
+
 
 ## Environment preparation
 
 ### Python versioning
 Python 3.6–3.9
 
-1.
-2.Install and then switch to version 3.9 (or later version if exists.)
+1.Install and then switch to version 3.9 (or later version if exists.)
 
 Install pyenv (WSL2)
 ref: https://github.com/pyenv/pyenv/wiki#suggested-build-environment  
@@ -156,10 +158,23 @@ distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
             sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
 ```
 
+
+修改WINDOWS dockerhub設定  
+https://stackoverflow.com/questions/60708229/why-am-i-getting-a-cannot-connect-to-the-docker-daemon-error-in-wsl2#:~:text=SUMMARY%3A%20In%20my%20case%2C%20the%20procedure%20for%20a,shell%27s%20start%20script%20%28In%20my%20case%20was%20%2A%24HOME%2F.bashrc%2A%29.
+
+
 ```
 sudo apt-get update \
     && sudo apt-get install -y nvidia-container-toolkit-base
 ```
+
+Configure the Docker daemon to recognize the NVIDIA Container Runtime:
+```
+
+
+```
+
+### CUDA
 
 Download Installer for Linux WSL-Ubuntu 2.0 x86_64
 (https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=WSL-Ubuntu&target_version=2.0&target_type=deb_local) 
@@ -186,17 +201,8 @@ https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html
 
 3.
 
-
-
-
-enable long path  
-https://thegeekpage.com/make-windows-11-accept-file-paths-over-260-characters/
-
-https://media.sundog-soft.com/ml/MlCourse.zip
-
-
 https://www.tensorflow.org/install/docker?hl=zh-tw
 ```
-python -m venv venv 
 pip install -r requirements.txt
 ```
+
