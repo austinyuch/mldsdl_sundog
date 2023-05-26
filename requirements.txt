@@ -143,7 +143,7 @@ trove-classifiers==2023.5.22
 typing_extensions==4.6.0
 tzdata==2023.3
 uri-template==1.2.0
-urllib3==2.0.2
+urllib3>=1.26
 virtualenv==20.23.0
 wcwidth==0.2.6
 webcolors==1.13
