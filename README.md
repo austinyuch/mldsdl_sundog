@@ -5,6 +5,8 @@ https://www.udemy.com/course/data-science-and-machine-learning-with-python-hands
 enable long path  
 https://thegeekpage.com/make-windows-11-accept-file-paths-over-260-characters/
 
+course materials:
+https://www.sundog-education.com/machine-learning
 
 ## Environment preparation
 
@@ -83,7 +85,7 @@ pip install -U pip
 specify python path in vscode settings.json
 ```
 {...
- "python.pythonPath": ".venv/Scripts/python",
+ "python.pythonPath": ".venv/bin/python",
 ...
 }
 ```
@@ -104,7 +106,7 @@ activate .venv
 ```
 for linux
 ```
-source ./.venv/bin/activate
+source .venv/bin/activate
 ```
 
 ```
@@ -122,12 +124,15 @@ https://stackoverflow.com/questions/75372835/poetry-add-dependency-that-uses-cyt
 sudo apt-get install build-essential gfortran libatlas-base-dev python-pip 
 (ubuntu 22.04 has no python-dev)
 
-pip install pandas
-pip install jupyterlab
-pip install scipy
-pip install matplotlib
-pip installl scilit-learn
+```
+pip install pandas  
+pip install jupyterlab  
+pip install scipy  
+pip install matplotlib  
+pip installl scilit-learn  
+pip install statsmodels
 
+```
 ### Tensorflow Docker
 pull tensorflow docker
 ```
