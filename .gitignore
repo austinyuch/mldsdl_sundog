@@ -6,3 +6,4 @@ MLCourse.zip
 MLCourse/**/*
 *.ipynb_checkpoints
 **/ipynb_checkpoints/*
+labs/emails/**/*

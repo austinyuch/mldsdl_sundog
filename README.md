@@ -8,6 +8,7 @@ https://thegeekpage.com/make-windows-11-accept-file-paths-over-260-characters/
 course materials:
 https://www.sundog-education.com/machine-learning
 
+
 ## Environment preparation
 
 ### Python versioning
@@ -71,7 +72,7 @@ python --version
 create env
 ```
 python -m pip install -U pip
-python -m venv .venv
+python -m venv venv
 
 ```
 
@@ -80,37 +81,34 @@ activate venv in windows
 # switch to the python version
 pyenv local 3.9.13
 # upgrade pip
-pip install -U pip
+python -m pip install -U pip
 ```
 specify python path in vscode settings.json
 ```
 {...
- "python.pythonPath": ".venv/bin/python",
+ "python.pythonPath": "venv/bin/python",
 ...
 }
 ```
 
 
-create ".venv" venv
-```
-python -m venv .venv
-```
-for linux:
-```
-python3 -m venv .venv
-```
 
-activate .venv
+activate venv
 ```
-.venv/Scripts/activate
+venv/Scripts/activate
 ```
 for linux
 ```
-source .venv/bin/activate
+source venv/bin/activate
 ```
 
 ```
-pip install -U pip
+python -m pip install -U pip
+```
+
+Install tensorflow specific version
+```
+pip install https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-2.6.0-cp39-cp39-win_amd64.whl
 ```
 
 do not use poetry, because jupyterlab dependency need cython; 
@@ -210,4 +208,10 @@ https://www.tensorflow.org/install/docker?hl=zh-tw
 ```
 pip install -r requirements.txt
 ```
+
+
+
+decision tree:
+
+https://graphviz.org/download/
 
