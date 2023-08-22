@@ -50,10 +50,10 @@ Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv
 ```
 
 ```
-pyenv install 3.9.13
-pyenv local 3.9.13
+pyenv install 3.9.17
+pyenv local 3.9.17
 pyenv rehash
-pyenv shell 3.9.13
+pyenv shell 3.9.17
 ```
 
 Env variable may be different, do check it. e.g. 
