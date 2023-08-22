@@ -1,6 +1,6 @@
 venv/**
 .venv/**
-
+.python-version
 install-pyenv-win.ps1
 MLCourse.zip
 MLCourse/**/*
