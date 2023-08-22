@@ -1,13 +1,12 @@
 tensorflow
+scikit-learn
+scipy
 pandas
 numpy
 typing-extensions
 ipykernel
 matplotlib
 jupyterlab
-
-scikit-learn
-scipy
-seaborn
+# seaborn
 
 graphviz>=0.20.1
