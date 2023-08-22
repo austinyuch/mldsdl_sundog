@@ -1,7 +1,7 @@
-# tensorflow
+tensorflow
 pandas
-numpy~=1.19.2
-typing-extensions~=3.7.4
+numpy
+typing-extensions
 ipykernel
 matplotlib
 jupyterlab
