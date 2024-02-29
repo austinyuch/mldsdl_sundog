@@ -12,7 +12,8 @@ https://www.sundog-education.com/machine-learning
 ## Environment preparation
 
 ### Python versioning
-Python 3.6–3.9
+<!-- Python 3.6–3.9
+python 3.10.13 -->
 
 1.Install and then switch to version 3.9 (or later version if exists.)
 
